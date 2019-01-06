@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Login web app</title>
+	
+		<script type = "text/javascript" language = "JavaScript">
+		
+			function carga(){
+				
+				alert("Entra en la funcion carga()")
+				document.getElementById("usuario").focus();
+
+			}
+			
+			/* 
+			Esta es una validacion de campos simple. Nota que para validar dos campos a la vez
+			Nota que para validar dos campos a la vez tienen que estar dentro del mismo parentesis 
+			*/
+			function valideDatos(){
+				
+				alert("Entra en valideDatos();");
+				
+				var usuario = document.getElementById("usuario");
+				var password = document.getElementById("password");
+				
+				if (usuario.value == "" || usuario.value == '' || usuario.value == null &&
+					password.value == "" || password.value == '' || password.value == null){
+					
+					alert("Introduce usuario y passowrd");
+					usuario.focus();
+					return false;
+					
+					}else if(password.value == "" || password.value == '' || password.value == null){
+						
+						alert("Introduce passowrd");
+						password.focus();
+						return false;
+						
+					}else if (usuario.value == "" || usuario.value == '' || usuario.value == null){
+						
+						alert("Introduce usuario");
+						usuario.focus();
+						return false;
+						
+					}else{
+						
+						return true;
+					}
+				
+			}
+		
+		</script>
+	
+	
+		<style>
+			.myButton {
+				-moz-box-shadow: 0px 0px 0px 2px #9fb4f2;
+				-webkit-box-shadow: 0px 0px 0px 2px #9fb4f2;
+				box-shadow: 0px 0px 0px 2px #9fb4f2;
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7892c2
+					), color-stop(1, #476e9e));
+				background: -moz-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+				background: -webkit-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+				background: -o-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+				background: -ms-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+				background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7892c2',
+					endColorstr='#476e9e', GradientType=0);
+				background-color: #7892c2;
+				-moz-border-radius: 10px;
+				-webkit-border-radius: 10px;
+				border-radius: 10px;
+				border: 1px solid #4e6096;
+				display: inline-block;
+				cursor: pointer;
+				color: #ffffff;
+				font-family: Verdana;
+				font-size: 19px;
+				padding: 12px 37px;
+				text-decoration: none;
+				text-shadow: 0px 1px 0px #283966;
+			}
+			
+			.myButton:hover {
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e
+					), color-stop(1, #7892c2));
+				background: -moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+				background: -webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+				background: -o-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+				background: -ms-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+				background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e',
+					endColorstr='#7892c2', GradientType=0);
+				background-color: #476e9e;
+			}
+			
+			.myButton:active {
+				position: relative;
+				top: 1px;
+			}
+</style>
+</head>
+
+
+<body onload = "carga();">
+
+	<p>HTML</p>
+	<p>CSS</p>
+	<p>JAVA</p>
+
+	<form action="loginWeb.jr" method = "POST" onsubmit = "return valideDatos();">
+	
+		<table align = "center" style = "font-weight:bold; size = 27px">
+			<tr>
+				<td colspan = "2">Enter username and password</td>
+			</tr>
+			
+			<tr>
+				<td>User: </td>
+				<td> <input type = "text"  name = "user" id = "usuario" > </td>
+			</tr>
+			
+		
+			<tr>
+				<td>Password: </td>
+				<td> <input type = "password" name = "pass" id = "password"> </td>
+			</tr>
+			<tr>
+				<td> <input class = "myButton" type = "button" value = "Cancelar"></td>
+				<td> <input class = "myButton" type = "submit" value = "Aceptar"></td>
+			</tr>
+				
+		</table>
+	
+	</form>
+
+	
+</body>
+</html>
